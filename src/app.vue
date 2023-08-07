@@ -24,15 +24,23 @@ onMounted(() => {
 <template>
   <VitePwaManifest />
   <NuxtLayout>
-    <NuxtPage />
+    <NConfigProvider inline-theme-disabled>
+      <NMessageProvider>
+        <NNotificationProvider>
+          <NLoadingBarProvider>
+            <NDialogProvider>
+              <NuxtPage />
+            </NDialogProvider>
+          </NLoadingBarProvider>
+        </NNotificationProvider>
+      </NMessageProvider>
+    </NConfigProvider>
   </NuxtLayout>
 </template>
 
 <style>
-.dark {
-  --bg-color-900: #131313;
-  --bg-color-800: #1e1e20;
-}
+@import "@vue-flow/core/dist/style.css";
+@import "@vue-flow/core/dist/theme-default.css";
 
 html,
 body,
@@ -46,17 +54,6 @@ body,
   background: #f5f5f5;
 }
 
-html.dark,
-.dark #__nuxt {
-  @apply bg-zinc-950;
-  color: #ebf4f1;
-}
-
-html.dark-theme {
-  color: white;
-  transition: background-color 0.5s ease, color 0.5s ease;
-}
-
 /* Hide scrollbar for Chrome, Safari and Opera */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
@@ -66,5 +63,15 @@ html.dark-theme {
 .no-scrollbar {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+}
+
+.vue-flow__node-custom {
+  border: 1px solid #777;
+  padding: 10px;
+  border-radius: 10px;
+  background: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 </style>

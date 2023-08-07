@@ -1,10 +1,144 @@
 <template>
-  <div class="mx-auto my-0 w-screen max-w-[1200px] bg-white dark:bg-zinc-800">
-    <VHeader />
-    <div class="pt-15 mt-28 w-full bg-white pb-5 dark:bg-zinc-800 sm:mt-0 sm:py-5 sm:pb-4 sm:pt-5">
-      <slot />
-    </div>
-    <VFooter />
-  </div>
+  <NLayout>
+    <NLayoutHeader>
+      <NSwitch>
+        <template #checked>
+          Flow View
+        </template>
+        <template #unchecked>
+          Data View
+        </template>
+      </NSwitch>
+    </NLayoutHeader>
+    <n-layout-content content-style="padding: 24px;">
+      <slot/>
+    </n-layout-content>
+    <n-layout-footer>这是 Footer</n-layout-footer>
+  </NLayout>
 </template>
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import {
+  NConfigProvider,
+  NButton,
+  NSpace,
+  NA,
+  NAffix,
+  NAlert,
+  NAnchor,
+  NBackTop,
+  NAutoComplete,
+  NAvatar,
+  NAvatarGroup,
+  NAnchorLink,
+  NBadge,
+  NBlockquote,
+  NBreadcrumb,
+  NBreadcrumbItem,
+  NButtonGroup,
+  NCalendar,
+  NCascader,
+  NCheckbox,
+  NCheckboxGroup,
+  NCol,
+  NCollapse,
+  NCollapseItem,
+  NCollapseTransition,
+  NColorPicker,
+  NCountdown,
+  NCard,
+  NCarousel,
+  NCarouselItem,
+  NDataTable,
+  NDatePicker,
+  NDescriptions,
+  NDescriptionsItem,
+  NDialog,
+  NDialogProvider,
+  NDivider,
+  NDrawer,
+  NDropdown,
+  NDynamicInput,
+  NDynamicTags,
+  NForm,
+  NEl,
+  NEllipsis,
+  NEmpty,
+  NFormItem,
+  NFormItemCol,
+  NFormItemGi,
+  NFormItemGridItem,
+  NFormItemRow,
+  NGi,
+  NGlobalStyle,
+  NGradientText,
+  NGrid,
+  NGridItem,
+  NH1,
+  NHr,
+  NIcon,
+  NIconWrapper,
+  NImage,
+  NImageGroup,
+  NInput,
+  NInputGroup,
+  NInputGroupLabel,
+  NInputNumber,
+  NLayout,
+  NLayoutContent,
+  NLayoutFooter,
+  NLayoutHeader,
+  NLayoutSider,
+  NLi,
+  NList,
+  NListItem,
+  NLoadingBarProvider,
+  NLog,
+  NMention,
+  NMenu,
+  NMessageProvider,
+  NNotificationProvider,
+  NModal,
+  NNumberAnimation,
+  NOl,
+  NP,
+  NPageHeader,
+  NPagination,
+  NPopconfirm,
+  NPopover,
+  NPopselect,
+  NProgress,
+  NRadio,
+  NRadioButton,
+  NRadioGroup,
+  NRate,
+  NResult,
+  NScrollbar,
+  NSelect,
+  NSkeleton,
+  NSlider,
+  NSpin,
+  NStatistic,
+  NStep,
+  NSteps,
+  NSwitch,
+  NTabPane,
+  NTable,
+  NTag,
+  NText,
+  NTabs,
+  NThing,
+  NTime,
+  NTooltip,
+  NTimePicker,
+  NTimeline,
+  NTimelineItem,
+  NTransfer,
+  NTree,
+  NTreeSelect,
+  NUl,
+  NUpload,
+  NUploadDragger,
+  NWatermark,
+  NRow,
+} from "naive-ui"
+</script>
