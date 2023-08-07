@@ -8,3 +8,5 @@ dist
 .DS_Store
 .vscode/
 .pnpm-store/
+mock_workflow.json
+mock_object_info.json
